@@ -22,7 +22,7 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
-
+    protected $redirectPath = '/admin/dashboard';
     /**
      * Create a new authentication controller instance.
      *
@@ -61,5 +61,13 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+
+    public function getLogout(){
+
+        \Auth::logout();
+
+        return \Redirect::to('auth/login');
     }
 }
