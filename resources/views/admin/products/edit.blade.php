@@ -41,7 +41,7 @@
             <div class="box-header">
               
               <div class="container" >
-                
+
               </div>
               <form action="/admin/product/update/{!! $product->id !!}" class="col-md-4" method="POST" enctype="multipart/form-data">
               <input type="hidden" value="{!! csrf_token() !!}" name="_token">
@@ -99,21 +99,31 @@
                 <div class="form-group">
                   <label for="is_featured">Is Featured</label><br>
                     <select name="is_featured" class="form-control">
-                      <option value="0" class="btn btn-info">Choice featured</option> 
-                      <option value="{!! $product->is_featured !!}"></option>
-                      <option value="1">Yes</option>
-                      <option value="0">no</option>
+                    <option value="1"
+                      @if ($product->is_featured == 1)
+                        selected
+                        @endif 
+                      >Yes</option>
+                      <option value="0" 
+                      @if ($product->is_featured == 0)
+                        selected
+                        @endif >No</option>
                       </option>
                     </select>          
                 </div>
                     
                 <div class="form-group">
                   <label for="flag">flag</label><br>
-                    <select name="flag" class="form-control">
-                      <option value="0" class="btn btn-info">Choice flag</option> 
-                      <option value="{!! $product->flag !!}"></option>
-                      <option value="1">Publish</option>
-                      <option value="0">Unpublish</option>
+                    <select name="flag" class="form-control">                      
+                      <option value="1"
+                        @if ($product->flag == 1)
+                        selected
+                        @endif 
+                      >Publish</option>
+                      <option value="0" 
+                      @if ($product->flag == 0)
+                        selected
+                        @endif >Unpublish</option>
                     </select>          
                 </div>
                     

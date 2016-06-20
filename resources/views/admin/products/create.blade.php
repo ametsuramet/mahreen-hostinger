@@ -94,15 +94,15 @@
 
                 <div class="form-group">
                   <label for="is_featured">Is Featured</label><br>
-                    <select>
+                    <select name="is_featured">
                       <option value="1">Yes</option>
                       <option value="0">no</option>
                     </select>          
                 </div>
                     
                 <div class="form-group">
-                  <label for="is_featured">Is Featured</label><br>
-                    <select>
+                  <label for="flag">Flag</label><br>
+                    <select name="flag">
                       <option value="1">Publish</option>
                       <option value="0">Unpublish</option>
                     </select>          
