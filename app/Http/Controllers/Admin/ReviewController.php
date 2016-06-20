@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Review;
+use App\Product;
 
 class ReviewController extends Controller
 {
@@ -16,7 +18,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $review = review::all();
+        return view('admin.reviews.index')->with('reviews', $review);
     }
 
     /**
@@ -26,7 +29,9 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        $list_product = Product::all();
+
+        return view('admin.reviews.create', compact('review', 'list_product'));
     }
 
     /**

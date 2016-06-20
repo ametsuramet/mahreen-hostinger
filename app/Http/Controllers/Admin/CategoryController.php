@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Category;
 
 class CategoryController extends Controller
 {
@@ -16,7 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Category::all();
+        return view('admin.categories.index')->with('categories', $category);
     }
 
     /**
@@ -26,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -37,7 +39,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $category = new Category;
+        $category->title = $request->input('title');
+        $category->slug = $request->input('slug');
+        $category->description = $request->input('description');
+        $category->save();
+        return redirect('admin/category')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -48,7 +56,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
@@ -59,7 +68,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -71,7 +81,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $category = Category::find($id);
+        $category->title = $request->input('title');
+        $category->slug = $request->input('slug');
+        $category->description = $request->input('description');
+        $category->save();
+        return redirect('admin/category')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -82,6 +98,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id)->delete();
+
+        return redirect('admin/category')->with('message', 'Data berhasil dihapus!');
     }
 }

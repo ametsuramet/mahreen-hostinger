@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Blog;
+use App\CategoryBlog;
 
 class BlogController extends Controller
 {
@@ -16,7 +18,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $blog = Blog::all();
+        return view('admin.blogs.index')->with('blogs', $blog);
     }
 
     /**
@@ -26,7 +29,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        $list_category_blog = CategoryBlog::all();
+
+        return view('admin.blogs.create', compact('blog', 'list_category_blog'));
     }
 
     /**
@@ -37,7 +42,17 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $blog = new Blog;
+        
+        $blog->title = $request->input('title');
+        $blog->description = $request->input('description');
+        $blog->category_blog_id = $request->input('category_blog_id');
+        $blog->slug = str_slug($request->input('slug'));
+        $blog->is_featured = $request->input('is_featured');        
+        $blog->flag = $request->input('flag');             
+        $blog->save();
+            return redirect('admin/blog')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**

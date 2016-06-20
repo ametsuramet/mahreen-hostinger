@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\CategoryBlog;
+
 
 class CategoryBlogController extends Controller
 {
@@ -16,7 +18,8 @@ class CategoryBlogController extends Controller
      */
     public function index()
     {
-        //
+        $categoryBlog = CategoryBlog::all();
+        return view('admin.categoryBlogs.index')->with('categoryBlogs', $categoryBlog);
     }
 
     /**
