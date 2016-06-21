@@ -88,5 +88,13 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::post('/orderItem/update/{id}', 'Admin\OrderItemController@update');
 	Route::post('/orderItem/store', 'Admin\OrderItemController@store');
 	Route::get('/orderItem/destroy/{id}', 'Admin\OrderItemController@destroy');
+
+	Route::get('/setting', 'Admin\SettingController@index');
+	Route::get('/setting/create', 'Admin\SettingController@create');
+	Route::get('/setting/edit/{id}', 'Admin\SettingController@edit');
+	Route::get('/setting/show/{id}', 'Admin\SettingController@show');
+	Route::post('/setting/update/{id}', 'Admin\SettingController@update');
+	Route::post('/setting/store', 'Admin\SettingController@store');
+	Route::get('/setting/destroy/{id}', 'Admin\SettingController@destroy');
 });
 

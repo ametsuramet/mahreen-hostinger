@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Setting;
 
 class SettingController extends Controller
 {
@@ -16,7 +17,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+        $setting = Setting::all();
+        return view('admin.settings.index')->with('settings', $setting);
     }
 
     /**
@@ -26,7 +28,7 @@ class SettingController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.settings.create', compact('setting'));
     }
 
     /**
@@ -37,7 +39,17 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $setting = new Setting;
+        $setting->company_name = $request->input('company_name');
+        $setting->short_name = $request->input('short_name');
+        $setting->contact_person = $request->input('contact_person');
+        $setting->email = $request->input('email');
+        $setting->phone = $request->input('phone');
+        $setting->address = $request->input('address');
+        $setting->description = $request->input('description');
+        $setting->save();
+        return redirect('admin/setting')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -59,7 +71,8 @@ class SettingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $setting = Setting::find($id);
+        return view('admin.settings.edit', compact('setting'));
     }
 
     /**
@@ -71,7 +84,17 @@ class SettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $setting = Setting::find($id);
+        $setting->company_name = $request->input('company_name');
+        $setting->short_name = $request->input('short_name');
+        $setting->contact_person = $request->input('contact_person');
+        $setting->email = $request->input('email');
+        $setting->phone = $request->input('phone');
+        $setting->address = $request->input('address');
+        $setting->description = $request->input('description');
+        $setting->save();
+        return redirect('admin/setting')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -82,6 +105,7 @@ class SettingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $setting = Setting::find($id)->delete();
+        return redirect('admin/setting')->with('message', 'Data berhasil ditambahkan!');
     }
 }
