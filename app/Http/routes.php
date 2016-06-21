@@ -72,5 +72,13 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::post('/slider/update/{id}', 'Admin\SliderController@update');
 	Route::post('/slider/store', 'Admin\SliderController@store');
 	Route::get('/slider/destroy/{id}', 'Admin\SliderController@destroy');
+
+	Route::get('/order', 'Admin\OrderController@index');
+	Route::get('/order/create', 'Admin\OrderController@create');
+	Route::get('/order/edit/{id}', 'Admin\OrderController@edit');
+	Route::get('/order/show/{id}', 'Admin\OrderController@show');
+	Route::post('/order/update/{id}', 'Admin\OrderController@update');
+	Route::post('/order/store', 'Admin\OrderController@store');
+	Route::get('/order/destroy/{id}', 'Admin\OrderController@destroy');
 });
 

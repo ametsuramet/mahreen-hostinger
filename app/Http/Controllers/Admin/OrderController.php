@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Order;
 
 class OrderController extends Controller
 {
@@ -16,7 +17,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $order = Order::all();
+        return view('admin.orders.index')->with('orders', $order);
     }
 
     /**
@@ -26,7 +28,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.orders.create');     
     }
 
     /**
@@ -37,7 +39,22 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $order = new Order;
+        $order->code = $request->input('code');
+        $order->date = $request->input('date');
+        $order->user_id = $request->input('user_id');
+        $order->total_amount = $request->input('total_amount');
+        $order->shipping_fee = $request->input('shipping_fee');
+        $order->total_discount = $request->input('total_discount');
+        $order->final_amount = $request->input('final_amount');
+        $order->shipping_name = $request->input('shipping_name');
+        $order->shipping_address = $request->input('shipping_address');
+        $order->shipping_phone = $request->input('shipping_phone');
+        $order->shipping_email = $request->input('shipping_email');       
+        $order->status = $request->input('status');
+        $order->save();
+        return redirect('admin/order')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -59,7 +76,9 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::find($id);
+        
+        return view('admin.orders.edit', compact('order'));
     }
 
     /**
@@ -71,7 +90,22 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $order = Order::find($id);
+        $order->code = $request->input('code');
+        $order->date = $request->input('date');
+        $order->user_id = $request->input('user_id');
+        $order->total_amount = $request->input('total_amount');
+        $order->shipping_fee = $request->input('shipping_fee');
+        $order->total_discount = $request->input('total_discount');
+        $order->final_amount = $request->input('final_amount');
+        $order->shipping_name = $request->input('shipping_name');
+        $order->shipping_address = $request->input('shipping_address');
+        $order->shipping_phone = $request->input('shipping_phone');
+        $order->shipping_email = $request->input('shipping_email');       
+        $order->status = $request->input('status');
+        $order->save();
+        return redirect('admin/order')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -82,6 +116,7 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id)->delete();
+        return redirect('admin/order')->with('message', 'Data berhasil dihapus!');
     }
 }
