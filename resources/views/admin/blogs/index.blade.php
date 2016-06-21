@@ -45,8 +45,8 @@
                 <thead>
                   <tr>
                     <th>title</th>
-                    <th>category blog id</th>
                     <th>slug</th>
+                    <th>category blog id</th>
                     <th>description</th>               
                     <th>is featured</th>
                     <th>flag</th>
@@ -56,16 +56,18 @@
                 </thead>
 
                 <tbody>
-                @foreach($blogs as $Blog)
-                <tr>
-                  <td>{!! $blog->title !!}</td>
-                  <td>{!! $blog->category_blog_id !!}</td>              
-                  <td>{!! $blog->slug !!}</td>              
-                  <td>{!! $blog->description !!}</td>     
-                  <td>{!! $blog->is_featured !!}</td>              
-                  <td>{!! $blog->flag !!}</td>              
-                            
-                </tr>
+                @foreach($blogs as $blog)
+                  <tr>
+                    <td>{!! $blog->title !!}</td>
+                    <td>{!! $blog->slug !!}</td>              
+                    <td>{!! $blog->category_blog_id !!}</td>              
+                    <td>{!! $blog->description !!}</td>     
+                    <td>{!! $blog->is_featured !!}</td>              
+                    <td>{!! $blog->flag !!}</td>
+                    <td><a href="/admin/blog/edit/{!! $blog->id !!}" class="fa fa-fw fa-edit fa-2x" style=" color:orange; text-shadow: 2px 2px 2px #ccc"></a>
+                        <a href="/admin/blog/destroy/{!! $blog->id !!}" class="fa fa-fw fa-trash-o fa-2x" style="color:red; text-shadow: 2px 2px 2px #ccc"></a></td>              
+                              
+                  </tr>
                 @endforeach
                 
                 </tbody>

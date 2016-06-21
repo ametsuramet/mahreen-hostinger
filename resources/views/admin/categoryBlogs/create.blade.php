@@ -32,32 +32,28 @@
           
         </div>
         <div class="box-body">
-          <table id="example1" class="table table-bordered table-striped">
-            <thead>
-            <tr style="background-color: #3c8dbc;">
-              <th>title</th>
-              <th>slug</th>
-              <th>description</th>               
-              <th><a href="{{ url('admin/categoryBlog/create') }}" class="btn btn-sm btn-info">Add Category Blog</a></th>               
-                                      
-            </tr>
-            </thead>
+          
+          <form action="/admin/categoryBlog/store" class="col-md-4" method="POST" enctype="multipart/form-data">
+          <input type="hidden" value="{!! csrf_token() !!}" name="_token">
+                
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control "  name="title" placeholder="ex title">
+          </div>
 
-            <tbody>
-            @foreach($categoryBlogs as $category_blog)
-            <tr>
-              <td>{!! $category_blog->title !!}</td>
-              <td>{!! $category_blog->slug !!}</td>              
-              <td>{!! $category_blog->description !!}</td>    
+          <div class="form-group">
+            <label for="slug">Slug</label>
+            <input type="text" class="form-control "  name="slug" placeholder="ex slug">
+          </div>
 
-              <td><a href="/admin/categoryBlog/edit/{!! $category_blog->id !!}" class="fa fa-fw fa-edit fa-2x" style=" color:orange; text-shadow: 2px 2px 2px #ccc"></a>
-                  <a href="/admin/categoryBlog/destroy/{!! $category_blog->id !!}" class="fa fa-fw fa-trash-o fa-2x" style="color:red; text-shadow: 2px 2px 2px #ccc"></a></td> 
-                        
-            </tr>
-            @endforeach
-            
-            </tbody>
-          </table>
+          <div class="form-group">
+           <label for="description">Description</label>
+           <textarea name="description" class="form-control" rows="9"></textarea>
+          </div>
+                  
+
+          <input type="submit" class="btn btn-primary"></input>
+
         </div>
         <!-- /.box-body -->
       </div>

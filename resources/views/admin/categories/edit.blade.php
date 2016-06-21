@@ -43,7 +43,7 @@
               </div>
           
 
-              <form action="/admin/category/update" class="col-md-4" method="POST" enctype="multipart/form-data">
+              <form action="/admin/category/update/{!! $category->id !!}" class="col-md-4" method="POST" enctype="multipart/form-data">
               <input type="hidden" value="{!! csrf_token() !!}" name="_token">
                 
                 <div class="form-group">
@@ -58,9 +58,9 @@
 
                 <div class="form-group">
                  <label for="description">Description</label>
-                 <textarea name="description" class="form-control" rows="9" value="{!! $category->description !!}"></textarea>
+                 <textarea name="description" class="form-control" rows="9">{!! $category->description !!}</textarea>
                 </div>
-                  
+                 
 
                 <input type="submit" class="btn btn-primary"></input>
 

@@ -31,7 +31,7 @@ class BlogController extends Controller
     {
         $list_category_blog = CategoryBlog::all();
 
-        return view('admin.blogs.create', compact('blog', 'list_category_blog'));
+        return view('admin.blogs.create',compact('list_category_blog'));
     }
 
     /**
@@ -43,16 +43,15 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $blog = new Blog;
-        
-        $blog->title = $request->input('title');
-        $blog->description = $request->input('description');
+        $blog = new Blog;        
+        $blog->title = $request->input('title');              
+        $blog->slug = str_slug($request->input('title'));
         $blog->category_blog_id = $request->input('category_blog_id');
-        $blog->slug = str_slug($request->input('slug'));
+        $blog->description = $request->input('description');
         $blog->is_featured = $request->input('is_featured');        
         $blog->flag = $request->input('flag');             
         $blog->save();
-            return redirect('admin/blog')->with('message', 'Data berhasil ditambahkan!');
+        return redirect('admin/blog')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -74,7 +73,9 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blog = Blog::find($id);
+        $list_category_blog = CategoryBlog::all();
+        return view('admin.blogs.edit', compact('blog','list_category_blog'));
     }
 
     /**
@@ -86,7 +87,16 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $blog = Blog::find($id);        
+        $blog->title = $request->input('title');              
+        $blog->slug = str_slug($request->input('title'));
+        $blog->category_blog_id = $request->input('category_blog_id');
+        $blog->description = $request->input('description');
+        $blog->is_featured = $request->input('is_featured');        
+        $blog->flag = $request->input('flag');             
+        $blog->save();
+        return redirect('admin/blog')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -97,6 +107,7 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::find($id)->delete();
+        return redirect('admin/blog')->with('message', 'Data berhasil dihapus!');
     }
 }

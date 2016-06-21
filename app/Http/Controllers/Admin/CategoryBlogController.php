@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\CategoryBlog;
 
 
+
 class CategoryBlogController extends Controller
 {
     /**
@@ -18,8 +19,8 @@ class CategoryBlogController extends Controller
      */
     public function index()
     {
-        $categoryBlog = CategoryBlog::all();
-        return view('admin.categoryBlogs.index')->with('categoryBlogs', $categoryBlog);
+        $category_blog = CategoryBlog::all();
+        return view('admin.categoryBlogs.index')->with('categoryBlogs', $category_blog);
     }
 
     /**
@@ -29,7 +30,7 @@ class CategoryBlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categoryBlogs.create');
     }
 
     /**
@@ -40,7 +41,13 @@ class CategoryBlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $category_blog = new CategoryBlog;
+        $category_blog->title = $request->input('title');
+        $category_blog->slug = $request->input('slug');
+        $category_blog->description = $request->input('description');
+        $category_blog->save();
+        return redirect('admin/categoryBlog')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -62,7 +69,8 @@ class CategoryBlogController extends Controller
      */
     public function edit($id)
     {
-        //
+         $category_blog = CategoryBlog::find($id);
+        return view('admin.categoryBlogs.edit', compact('category_blog'));
     }
 
     /**
@@ -74,7 +82,13 @@ class CategoryBlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $category_blog = CategoryBlog::find($id);
+        $category_blog->title = $request->input('title');
+        $category_blog->slug = $request->input('slug');
+        $category_blog->description = $request->input('description');
+        $category_blog->save();
+        return redirect('admin/categoryBlog')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -85,6 +99,7 @@ class CategoryBlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category_blog = CategoryBlog::find($id)->delete();
+        return redirect('admin/categoryBlog')->with('message', 'Data berhasil dihapus!');
     }
 }

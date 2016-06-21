@@ -83,14 +83,14 @@
               </div>
 
                 <div class="form-group">
-                  <label for="category_id">Category</label>
+                  <label for="category_id">Category ID</label>
                   <select name="category_id" class="form-control ">
                     <option value="0" class="btn btn-info">Choice Category </option>          
                   @foreach($list_category as $category)
                     <option value="{!! $category->id !!}"
                       @if($category->id == $product->category_id)
                         SELECTED
-                    @endif
+                      @endif
                     >{!! $category->title !!}</option>
                   @endforeach          
                   </select>

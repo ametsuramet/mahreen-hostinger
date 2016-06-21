@@ -42,7 +42,16 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $review = new Review;
+        $review->name = $request->input('name');
+        $review->email = $request->input('email');        
+        $review->user_id = $request->input('user_id');
+        $review->rating = $request->input('rating');
+        $review->product_id = $request->input('product_id');
+        $review->description = $request->input('description');                    
+        $review->save();
+        return redirect('admin/review')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -64,7 +73,10 @@ class ReviewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $review = review::find($id);
+        $list_product = Product::all();
+
+        return view('admin.reviews.edit', compact('review', 'list_product'));
     }
 
     /**
@@ -76,7 +88,16 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $review = Review::find($id);
+        $review->name = $request->input('name');
+        $review->email = $request->input('email');        
+        $review->user_id = $request->input('user_id');
+        $review->rating = $request->input('rating');
+        $review->product_id = $request->input('product_id');
+        $review->description = $request->input('description');                    
+        $review->save();
+        return redirect('admin/review')->with('message', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -87,6 +108,7 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $review = Review::find($id)->delete();
+        return redirect('admin/review')->with('message', 'Data berhasil dihapus!');
     }
 }

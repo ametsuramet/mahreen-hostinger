@@ -26,9 +26,12 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>                
+        <li><a href="{{ url('admin/category/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Category</span></a></li>
         <li><a href="{{ url('admin/product/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Product</span></a></li>
-        <li><a href="{{ url('admin/category/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>category</span></a></li>
+        <li><a href="{{ url('admin/categoryBlog/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Category Blog</span></a></li>
         <li><a href="{{ url('admin/blog/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Blog</span></a></li>
+        <li><a href="{{ url('admin/slider/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Slider</span></a></li>
+        <li><a href="{{ url('admin/review/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Review</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
