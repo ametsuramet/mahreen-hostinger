@@ -80,5 +80,13 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::post('/order/update/{id}', 'Admin\OrderController@update');
 	Route::post('/order/store', 'Admin\OrderController@store');
 	Route::get('/order/destroy/{id}', 'Admin\OrderController@destroy');
+
+	Route::get('/orderItem', 'Admin\OrderItemController@index');
+	Route::get('/orderItem/create', 'Admin\OrderItemController@create');
+	Route::get('/orderItem/edit/{id}', 'Admin\OrderItemController@edit');
+	Route::get('/orderItem/show/{id}', 'Admin\OrderItemController@show');
+	Route::post('/orderItem/update/{id}', 'Admin\OrderItemController@update');
+	Route::post('/orderItem/store', 'Admin\OrderItemController@store');
+	Route::get('/orderItem/destroy/{id}', 'Admin\OrderItemController@destroy');
 });
 

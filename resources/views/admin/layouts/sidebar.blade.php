@@ -33,6 +33,7 @@
         <li><a href="{{ url('admin/slider/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Slider</span></a></li>
         <li><a href="{{ url('admin/review/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Review</span></a></li>
         <li><a href="{{ url('admin/order/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Order</span></a></li>
+        <li><a href="{{ url('admin/orderItem/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Order Item</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
