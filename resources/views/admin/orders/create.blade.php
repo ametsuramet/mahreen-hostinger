@@ -53,11 +53,16 @@
                 <div class="form-group">
                   <label for="date">Date</label>
                   <input type="text" class="form-control "  name="date" placeholder="ex date">
-                </div>
+                </div>                
 
                 <div class="form-group">
                   <label for="user_id">User ID</label>
-                  <input type="number" class="form-control "  name="user_id" placeholder="ex user_id">
+                  <select name="user_id" class="form-control ">
+                    <option value="0" class="btn btn-info">Choice ID</option>          
+                  @foreach($list_user as $user)
+                    <option value="{!! $user->id !!}">{!! $user->name !!}</option>
+                  @endforeach          
+                  </select>
                 </div>
 
                 <div class="form-group">

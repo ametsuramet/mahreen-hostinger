@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\UserProfile;
+
 
 class UserProfileController extends Controller
 {
@@ -16,7 +18,8 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        //
+        $user_profile = UserProfile::all();
+        return view('admin.userProfiles.index')->with('userProfiles', $user_profile);
     }
 
     /**
@@ -26,7 +29,7 @@ class UserProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.userProfiles.create', compact('user_profile', 'user_profile'));
     }
 
     /**
@@ -37,7 +40,17 @@ class UserProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $user_profile = new UserProfile;
+        $user_profile->user_id = $request->input('user_id');
+        $user_profile->address = $request->input('address');
+        $user_profile->phone = $request->input('phone');
+        $user_profile->avatar = $request->input('avatar');
+        $user_profile->facebook = $request->input('facebook');
+        $user_profile->twitter = $request->input('twitter');
+        $user_profile->instagram = $request->input('instagram');
+        $user_profile->save();
+        return redirect('admin/userProfile')->with('message', 'data berhasil ditambahkan!');
     }
 
     /**
@@ -59,7 +72,8 @@ class UserProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user_profile = UserProfile::find($id);
+        return view('admin.userProfiles.edit', compact('user_profile'));
     }
 
     /**
@@ -71,7 +85,17 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $user_profile = UserProfile::find($id);
+        $user_profile->user_id = $request->input('user_id');
+        $user_profile->address = $request->input('address');
+        $user_profile->phone = $request->input('phone');
+        $user_profile->avatar = $request->input('avatar');
+        $user_profile->facebook = $request->input('facebook');
+        $user_profile->twitter = $request->input('twitter');
+        $user_profile->instagram = $request->input('instagram');
+        $user_profile->save();
+        return redirect('admin/userProfile')->with('message', 'data berhasil ditambahkan!');
     }
 
     /**
@@ -82,6 +106,7 @@ class UserProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user_profile = UserProfile::find($id)->delete();
+        return redirect('admin/userProfile')->with('message', 'data berhasil dihapus!');
     }
 }

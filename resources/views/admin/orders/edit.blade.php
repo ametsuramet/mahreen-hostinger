@@ -61,6 +61,20 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="user_id">User ID</label>
+                  <select name="user_id" class="form-control ">
+                    <option value="0" class="btn btn-info">Choice ID</option>          
+                  @foreach($list_user as $user)
+                    <option value="{!! $user->id !!}"
+                    @if($user->id == $order->user_id)
+                    SELECTED
+                    @endif
+                    >{!! $user->name !!}</option>
+                  @endforeach          
+                  </select>
+                </div>
+
+                <div class="form-group">
                   <label for="total_amount">Total Amount</label>
                   <input type="number" class="form-control "  name="total_amount" placeholder="ex total_amount" value="{!! $order->total_amount !!}">
                 </div>

@@ -35,6 +35,8 @@
         <li><a href="{{ url('admin/order/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Order</span></a></li>
         <li><a href="{{ url('admin/orderItem/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Order Item</span></a></li>
         <li><a href="{{ url('admin/setting/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>Setting</span></a></li>
+        <li><a href="{{ url('admin/user/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>User</span></a></li>
+        <li><a href="{{ url('admin/userProfile/') }}"><i class="fa fa-circle-o text-aqua"></i> <span>User Profile</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

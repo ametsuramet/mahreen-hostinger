@@ -27,6 +27,22 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::get('/dashboard', 'Admin\DashboardController@index');
 
+	Route::get('/user', 'Admin\UserController@index');
+	Route::get('/user/create', 'Admin\UserController@create');
+	Route::get('/user/edit/{id}', 'Admin\UserController@edit');
+	Route::get('/user/show/{id}', 'Admin\UserController@show');
+	Route::post('/user/update/{id}', 'Admin\UserController@update');
+	Route::post('/user/store', 'Admin\UserController@store');
+	Route::get('/user/destroy/{id}', 'Admin\UserController@destroy');
+
+	Route::get('/userProfile', 'Admin\UserProfileController@index');
+	Route::get('/userProfile/create', 'Admin\UserProfileController@create');
+	Route::get('/userProfile/edit/{id}', 'Admin\UserProfileController@edit');
+	Route::get('/userProfile/show/{id}', 'Admin\UserProfileController@show');
+	Route::post('/userProfile/update/{id}', 'Admin\UserProfileController@update');
+	Route::post('/userProfile/store', 'Admin\UserProfileController@store');
+	Route::get('/userProfile/destroy/{id}', 'Admin\UserProfileController@destroy');
+
 	Route::get('/review', 'Admin\ReviewController@index');
 	Route::get('/review/create', 'Admin\ReviewController@create');
 	Route::get('/review/edit/{id}', 'Admin\ReviewController@edit');

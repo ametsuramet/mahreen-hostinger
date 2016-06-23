@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\User;
 
 class OrderController extends Controller
 {
@@ -28,7 +29,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('admin.orders.create');     
+        $list_user = User::all();
+        return view('admin.orders.create', compact('order', 'list_user'));     
     }
 
     /**
@@ -77,8 +79,9 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::find($id);
+        $list_user = User::all();
         
-        return view('admin.orders.edit', compact('order'));
+        return view('admin.orders.edit', compact('order', 'list_user'));
     }
 
     /**
