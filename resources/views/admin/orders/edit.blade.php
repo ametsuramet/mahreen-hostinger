@@ -52,7 +52,7 @@
 
                 <div class="form-group">
                   <label for="date">Date</label>
-                  <input type="text" class="form-control "  name="date" placeholder="ex date" value="{!! $order->date !!}">
+                  <input type="date" class="form-control "  name="date" placeholder="ex date" value="{!! $order->date !!}">
                 </div>
 
                 <div class="form-group">

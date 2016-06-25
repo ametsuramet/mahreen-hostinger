@@ -58,7 +58,7 @@
 
                 <div class="form-group">
                   <label for="avatar">Avatar</label>
-                  <input type="text" class="form-control "  name="avatar" placeholder="ex xxxxxxxxx" value="{!! $user_profile->avatar !!}">
+                  <input type="file" class="form-control "  name="avatar" value="{!! $user_profile->avatar !!}">
                 </div>
              
                 <div class="form-group">

@@ -47,17 +47,17 @@
                 
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control "  name="name" placeholder="ex user" value="{!! $user->name !!}">
+                  <input type="text" class="form-control "  name="name" required="" placeholder="ex user" value="{!! $user->name !!}">
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="text" class="form-control "  name="email" placeholder="ex user@user.id" value="{!! $user->email !!}">
+                  <input type="email" class="form-control "  name="email" required="" placeholder="ex user@user.id" value="{!! $user->email !!}">
                 </div>
 
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="text" class="form-control "  name="password" placeholder="ex xxxxxxxxx" value="{!! $user->password !!}">
+                  <input type="text" class="form-control "  name="password" required="" placeholder="ex xxxxxxxxx" value="{!! $user->password !!}">
                 </div>
              
                  <div class="form-group">
@@ -92,12 +92,12 @@
 
                 <div class="form-group">
                   <label for="address">Address</label>
-                  <input type="text" class="form-control "  name="address" placeholder="ex jl. xxxx" value="{!! $user->profile->address !!}">
+                  <input type="text" class="form-control "  name="address" required="" placeholder="ex jl. xxxx" value="{!! $user->profile->address !!}">
                 </div>
 
                 <div class="form-group">
                   <label for="phone">Phone</label>
-                  <input type="text" class="form-control "  name="phone" placeholder="ex 08xx xxx xxx" value="{!! $user->profile->phone !!}">
+                  <input type="text" class="form-control "  name="phone" required="" placeholder="ex 08xx xxx xxx" value="{!! $user->profile->phone !!}">
                 </div>
 
                 <div class="form-group">

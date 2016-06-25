@@ -24,10 +24,12 @@
     @yield('content')
 <!-- /.content -->
 </aside>
+@include('admin.layouts.footer')
 <!-- /.right-side -->
 </div>
 
 @include('admin.layouts.scripts')
+
 
 </body>
 </html>

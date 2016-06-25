@@ -94,7 +94,7 @@
 
                 <div class="form-group">
                   <label for="is_featured">Is Featured</label><br>
-                    <select name="is_featured">
+                    <select name="is_featured" class="form-control">
                       <option value="1">Yes</option>
                       <option value="0">no</option>
                     </select>          
@@ -102,7 +102,7 @@
                     
                 <div class="form-group">
                   <label for="flag">Flag</label><br>
-                    <select name="flag">
+                    <select name="flag" class="form-control">
                       <option value="1">Publish</option>
                       <option value="0">Unpublish</option>
                     </select>          

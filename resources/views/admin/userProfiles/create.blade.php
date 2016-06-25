@@ -48,32 +48,32 @@
                 
                 <div class="form-group">
                   <label for="address">Address</label>
-                  <input type="text" class="form-control "  name="address" placeholder="ex jl. xxxx">
+                  <input type="text" class="form-control "  name="address" required placeholder="ex jl. xxxx">
                 </div>
 
                 <div class="form-group">
                   <label for="phone">Phone</label>
-                  <input type="text" class="form-control "  name="phone" placeholder="ex 08xx xxx xxx">
+                  <input type="text" class="form-control "  name="phone" required placeholder="ex 08xx xxx xxx">
                 </div>
 
                 <div class="form-group">
                   <label for="avatar">Avatar</label>
-                  <input type="text" class="form-control "  name="avatar" placeholder="ex xxxxxxxxx">
+                  <input type="file" class="form-control "  name="avatar">
                 </div>
              
                 <div class="form-group">
                   <label for="facebook">Facebook</label>
-                  <input type="text" class="form-control "  name="facebook" placeholder="ex xxxxxxxxx">
+                  <input type="text" class="form-control "  name="facebook" required placeholder="ex xxxxxxxxx">
                 </div>
 
                 <div class="form-group">
                   <label for="twitter">Twitter</label>
-                  <input type="text" class="form-control "  name="twitter" placeholder="ex xxxxxxxxx">
+                  <input type="text" class="form-control "  name="twitter" required placeholder="ex xxxxxxxxx">
                 </div>
 
                 <div class="form-group">
                   <label for="instagram">Instagram</label>
-                  <input type="text" class="form-control "  name="instagram" placeholder="ex xxxxxxxxx">
+                  <input type="text" class="form-control "  name="instagram" required placeholder="ex xxxxxxxxx">
                 </div>                  
 
                 <input type="submit" class="btn btn-primary"></input>

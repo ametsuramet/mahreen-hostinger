@@ -58,7 +58,7 @@
 
                 <div class="form-group">
                   <label for="url">Url</label>
-                  <input type="text" class="form-control "  name="url">
+                  <input type="url" class="form-control "  name="url">
                 </div>
 
 

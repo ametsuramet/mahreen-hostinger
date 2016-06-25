@@ -53,7 +53,12 @@ class UserController extends Controller
         $user_profile->user_id = $user->id;
         $user_profile->address = $request->input('address');
         $user_profile->phone = $request->input('phone');
-        $user_profile->avatar = $request->input('avatar');
+        if ($request->hasFile('avatar')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('avatar')->getClientOriginalName();
+            $request->file('avatar')->move($destinationPath, $filename);
+            $user_profile->avatar = $filename;
+        }
         $user_profile->facebook = $request->input('facebook');
         $user_profile->twitter = $request->input('twitter');
         $user_profile->instagram = $request->input('instagram');
@@ -105,8 +110,13 @@ class UserController extends Controller
         $user_profile = UserProfile::find($user->profile->id);
         $user->profile->user_id = $user->id;
         $user->profile->address = $request->input('address');
-        $user->profile->phone = $request->input('phone');
-        $user->profile->avatar = $request->input('avatar');
+        $user->profile->phone = $request->input('phone');        
+        if ($request->hasFile('avatar')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('avatar')->getClientOriginalName();
+            $request->file('avatar')->move($destinationPath, $filename);
+            $user->profile->avatar = $filename;
+        }
         $user->profile->facebook = $request->input('facebook');
         $user->profile->twitter = $request->input('twitter');
         $user->profile->instagram = $request->input('instagram');
