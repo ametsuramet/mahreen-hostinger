@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -114,3 +114,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::get('/setting/destroy/{id}', 'Admin\SettingController@destroy');
 });
 
+
+
+//FRONTEND
+//
+Route::get('/', 'Frontend\HomeController@index');
