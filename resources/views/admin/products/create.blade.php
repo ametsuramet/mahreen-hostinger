@@ -107,6 +107,21 @@
                       <option value="0">Unpublish</option>
                     </select>          
                 </div>
+
+                <div class="form-group">
+                  <label for="picture1">Picture 1</label>
+                  <input type="file" class="form-control"  name="picture1">
+                </div>
+                    
+                <div class="form-group">
+                  <label for="picture2">Picture 2</label>
+                  <input type="file" class="form-control"  name="picture2">
+                </div>
+
+                <div class="form-group">
+                  <label for="picture3">Picture 3</label>
+                  <input type="file" class="form-control"  name="picture3">
+                </div>
                     
                 
                 <input type="submit" class="btn btn-primary"></input>

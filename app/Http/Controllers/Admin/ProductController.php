@@ -53,7 +53,25 @@ class ProductController extends Controller
         $product->size = $request->input('size');
         $product->category_id = $request->input('category_id');
         $product->is_featured = $request->input('is_featured');
-        $product->flag = $request->input('flag');             
+        $product->flag = $request->input('flag');
+        if ($request->hasFile('picture1')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('picture1')->getClientOriginalName();
+            $request->file('picture1')->move($destinationPath, $filename);
+            $product->picture1 = $filename;
+        }
+        if ($request->hasFile('picture2')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('picture2')->getClientOriginalName();
+            $request->file('picture2')->move($destinationPath, $filename);
+            $product->picture2 = $filename;
+        }
+        if ($request->hasFile('picture3')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('picture3')->getClientOriginalName();
+            $request->file('picture3')->move($destinationPath, $filename);
+            $product->picture3 = $filename;
+        }                               
         $product->save();
             return redirect('admin/product')->with('message', 'Data berhasil ditambahkan!');
     }
@@ -104,7 +122,25 @@ class ProductController extends Controller
         $product->size = $request->input('size');
         $product->category_id = $request->input('category_id');       
         $product->is_featured = $request->input('is_featured');
-        $product->flag = $request->input('flag');        
+        $product->flag = $request->input('flag'); 
+        if ($request->hasFile('picture1')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('picture1')->getClientOriginalName();
+            $request->file('picture1')->move($destinationPath, $filename);
+            $product->picture1 = $filename;
+        }
+        if ($request->hasFile('picture2')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('picture2')->getClientOriginalName();
+            $request->file('picture2')->move($destinationPath, $filename);
+            $product->picture2 = $filename;
+        }
+        if ($request->hasFile('picture3')) {
+            $destinationPath = public_path().'/images/';
+            $filename = $request->file('picture3')->getClientOriginalName();
+            $request->file('picture3')->move($destinationPath, $filename);
+            $product->picture3 = $filename;
+        }                                
         $product->save();
         return redirect('admin/product')->with('message', 'Data berhasil ditambahkan!');
     }

@@ -126,6 +126,21 @@
                         @endif >Unpublish</option>
                     </select>          
                 </div>
+
+                <div class="form-group">
+                  <label for="picture1">Picture 1</label>
+                  <input type="file" class="form-control"  name="picture1" value="{!! $product->picture1 !!}">
+                </div>
+                    
+                <div class="form-group">
+                  <label for="picture2">Picture 2</label>
+                  <input type="file" class="form-control"  name="picture2" value="{!! $product->picture2 !!}">
+                </div>
+
+                <div class="form-group">
+                  <label for="picture3">Picture 3</label>
+                  <input type="file" class="form-control"  name="picture3" value="{!! $product->picture3 !!}">
+                </div>
                     
                 
                 <input type="submit" class="btn btn-primary"></input>
