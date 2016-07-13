@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Product;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -16,7 +18,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $product = Product::all();
+        return view('frontend.products.index')->with('products', $product);
     }
 
     /**

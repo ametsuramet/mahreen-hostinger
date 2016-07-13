@@ -25,6 +25,9 @@
                     <th>catagory</th>
                     <th>Is Featured</th>
                     <th>Flag</th>
+                    <th>Picture 1</th>
+                    <th>Picture 2</th>
+                    <th>Picture 3</th>
                     <th><a href="{{ url('admin/product/create') }}" class=" btn btn-xs btn-info">Add Product</th>
                                             
                   </tr>
@@ -43,6 +46,9 @@
                   <td>{!! $product->category->title !!}</td>
                   <td>{!! $product->is_featured !!}</td>
                   <td>{!! $product->flag !!}</td>
+                  <td>{!! $product->picture1 !!}</td>
+                  <td>{!! $product->picture2 !!}</td>
+                  <td>{!! $product->picture3 !!}</td>
                   
                   <td><a href="/admin/product/edit/{!! $product->id !!}" class="fa fa-fw fa-edit fa-2x" style=" color:orange; text-shadow: 2px 2px 2px #ccc"></a>
                       <a href="/admin/product/destroy/{!! $product->id !!}" class="fa fa-fw fa-trash-o fa-2x" style="color:red; text-shadow: 2px 2px 2px #ccc"></a></td>          

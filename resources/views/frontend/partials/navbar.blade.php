@@ -28,8 +28,27 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active"><a href="{{ url('home/') }}">Home</a>
                     </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Gamis</a>                        
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Cardigan</a>                        
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Tunic</a>                        
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Phasmina</a>                        
+                    </li>
+                   
+
+                    <!--
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Men <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -101,7 +120,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.yamm-content -->
+                               
                             </li>
                         </ul>
                     </li>
@@ -115,26 +134,26 @@
                                         <div class="col-sm-3">
                                             <h5>Clothing</h5>
                                             <ul>
-                                                <li><a href="category.html">T-shirts</a>
+                                                <li><a href="category.html">Pashmina</a>
                                                 </li>
-                                                <li><a href="category.html">Shirts</a>
+                                                <li><a href="category.html">Cardigan</a>
                                                 </li>
-                                                <li><a href="category.html">Pants</a>
+                                                <li><a href="category.html">Hijab</a>
                                                 </li>
-                                                <li><a href="category.html">Accessories</a>
+                                                <li><a href="category.html">Tunic</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>Shoes</h5>
                                             <ul>
-                                                <li><a href="category.html">Trainers</a>
+                                                <li><a href="">Trainers</a>
                                                 </li>
-                                                <li><a href="category.html">Sandals</a>
+                                                <li><a href="">Sandals</a>
                                                 </li>
-                                                <li><a href="category.html">Hiking shoes</a>
+                                                <li><a href="">Hiking shoes</a>
                                                 </li>
-                                                <li><a href="category.html">Casual</a>
+                                                <li><a href="">Casual</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -178,7 +197,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.yamm-content -->
+                                
                             </li>
                         </ul>
                     </li>
@@ -254,11 +273,11 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- /.yamm-content -->
+                                </div>                                
                             </li>
                         </ul>
                     </li>
+                    -->
                 </ul>
 
             </div>

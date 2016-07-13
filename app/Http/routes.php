@@ -119,3 +119,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 //FRONTEND
 //
 Route::get('/', 'Frontend\HomeController@index');
+Route::get('/home', 'Frontend\HomeController@index');
+
+Route::get('/category', 'Frontend\CategoryController@index');
+
+Route::get('/product', 'Frontend\ProductController@index');
+
