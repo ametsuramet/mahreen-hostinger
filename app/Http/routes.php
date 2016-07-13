@@ -121,7 +121,17 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 Route::get('/', 'Frontend\HomeController@index');
 Route::get('/home', 'Frontend\HomeController@index');
 
-Route::get('/category', 'Frontend\CategoryController@index');
+Route::get('/category/{id}/{slug}', 'Frontend\ProductController@listCategory');
 
-Route::get('/product', 'Frontend\ProductController@index');
+Route::get('/product/{id}/{slug}', 'Frontend\ProductController@viewProduct');
+
+// mahreenhijab.com/ <- home
+// mahreenhijab.com/category/{id}/{slug} <- list  product per category
+// mahreenhijab.com/product/{id}/{slug} <- product detail
+// mahreenhijab.com/contact <- contact form
+// mahreenhijab.com/cart <- shopping cart
+// mahreenhijab.com/payment <- payment
+// mahreenhijab.com/shipment <- shipment
+// mahreenhijab.com/blog/category/{id}/{slug} <- list blog article per category 
+// mahreenhijab.com/blog/article/{id}/{slug} <- detail article
 
