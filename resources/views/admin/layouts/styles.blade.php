@@ -11,6 +11,8 @@
     <link href="/public/bower_components/AdminLTE/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css"/>
     <!-- Daterange picker -->
     <link href="/public/bower_components/AdminLTE/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/public/bower_components/AdminLTE/plugins/datatables/dataTables.bootstrap.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="/public/bower_components/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css"/>
     <!-- Theme style -->
