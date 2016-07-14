@@ -125,6 +125,12 @@ Route::get('/category/{id}/{slug}', 'Frontend\ProductController@listCategory');
 
 Route::get('/product/{id}/{slug}', 'Frontend\ProductController@viewProduct');
 
+
+
+Route::get('/blog/category/{id}/{slug}', 'Frontend\BlogController@listBlog');
+
+Route::get('/blog/article/{id}/{slug}', 'Frontend\BlogController@viewBlog');
+
 // mahreenhijab.com/ <- home
 // mahreenhijab.com/category/{id}/{slug} <- list  product per category
 // mahreenhijab.com/product/{id}/{slug} <- product detail

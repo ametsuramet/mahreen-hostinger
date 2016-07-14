@@ -19,13 +19,13 @@
                     <tr>
                       <th>SKU</th>
                       <th>Title</th>                    
-                      <th>Price(s)</th>
-                      <th>Discount</th>                    
-                      <th>Size</th>
-                      <th>Category</th>
-                      <th>Featured</th>
-                      <th>Publish</th>
-                      <th>Pictures</th>            
+                      <th style="width:8%">Price(s)</th>
+                      <th style="width:1%">Discount</th>                    
+                      <th style="width:5%">Size</th>
+                      <th style="width:5%">Category</th>
+                      <th style="width:5%">Featured</th>
+                      <th style="width:8%">Publish</th>
+                      <th style="width:10%">Pictures</th>            
                       <th style="width:5%"></th>
                                               
                     </tr>
