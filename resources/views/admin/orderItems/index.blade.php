@@ -7,13 +7,12 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header">
-              <a href="{{ url('admin/orderItem/create') }}" class="btn btn-info pull-right"><i class="fa fa-plus" ></i>&nbsp;>Order</a>
+              <a href="{{ url('admin/orderItem/create') }}" class="btn btn-info pull-right"><i class="fa fa-plus" ></i>&nbsp;Order</a>
               <br>
               <br>
-              <div class="container" >
-                
+              <div class="container" >                
               </div>
-              
+              <h6>              
               <div class="table-responsive">
                 <table id="datatable1" class="table table-bordered table-striped">
                   <thead>
@@ -22,7 +21,6 @@
               				<th>Order ID</th>
               				<th>Product ID</th>    				     
               				<th style="width:9%"></th>
-
                     </tr>
                   </thead>
 
@@ -31,8 +29,7 @@
                     <tr>
                      	<td>{!! $order_item->qty !!}</td>
                       <td>{!! $order_item->order_id !!}</td>
-                      <td>{!! $order_item->product_id !!}</td>
-        				      					
+                      <td>{!! $order_item->product_id !!}</td>        				      					
         				      <td><a href="/admin/orderItem/edit/{!! $order_item->id !!}"  class="fa fa-fw fa-edit" style=" color:orange; text-shadow: 2px 2px 2px #ccc"></a> 
         				          <a href="/admin/orderItem/destroy/{!! $order_item->id !!}" class="fa fa-fw fa-trash-o" style="color:red; text-shadow: 2px 2px 2px #ccc"></a></td>
                              
@@ -41,7 +38,7 @@
                   
                   </tbody>
                 </table>  
-              </div>          
+              </div></h6>          
             </div>
           </div>
         </div>

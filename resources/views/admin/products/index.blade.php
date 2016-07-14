@@ -10,9 +10,9 @@
               <a href="{{ url('admin/product/create') }}" class="btn btn-info pull-right"><i class="fa fa-plus" ></i>&nbsp;Add Product</a> 
               <br>
               <br>
-              <div class="container" >
-                
+              <div class="container" >                
               </div>
+              <h6>
               <div class="table-responsive">
                 <table id="datatable1" class="table table-bordered table-striped">
                   <thead>
@@ -25,8 +25,7 @@
                       <th>Category</th>
                       <th>Featured</th>
                       <th>Publish</th>
-                      <th>Pictures</th>
-            
+                      <th>Pictures</th>            
                       <th style="width:9%"></th>
                                               
                     </tr>
@@ -76,7 +75,7 @@
                   
                   </tbody>
                 </table>              
-              </div>
+              </div></h6>
             </div>
           </div>
         </div>

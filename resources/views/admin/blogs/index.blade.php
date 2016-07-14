@@ -7,11 +7,12 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header">
-              <a href="{{ url('admin/blog/create') }}" class="btn btn-info pull-right"><i class="fa fa-plus" ></i>&nbsp;>Create Blog</a>
+              <a href="{{ url('admin/blog/create') }}" class="btn btn-info pull-right"><i class="fa fa-plus" ></i>&nbsp;Create Blog</a>
               <br>
               <br>
               <div class="container" >                
               </div>
+              <h6>
               <div class="table-responsive">
                 <table id="datatable1" class="table table-bordered table-striped">
                   <thead>
@@ -27,7 +28,7 @@
                   </thead>
 
                   <tbody>
-                  @foreach($blogs as $blog)
+                    @foreach($blogs as $blog)
                     <tr>
                       <td>{!! $blog->title !!}</td>
                       <td>{!! $blog->slug !!}</td>              
@@ -39,10 +40,10 @@
                           <a href="/admin/blog/destroy/{!! $blog->id !!}" class="fa fa-fw fa-trash-o" style="color:red; text-shadow: 2px 2px 2px #ccc"></a></td>              
                                 
                     </tr>
-                  @endforeach                  
+                    @endforeach                  
                   </tbody>
                 </table>
-              </div>        
+              </div></h6>        
             </div>
           </div>
         </div>
