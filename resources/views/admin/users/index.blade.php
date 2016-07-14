@@ -20,7 +20,7 @@
                       <th>Name</th>
                       <th>Email</th>                                   
                       <th>Role</th>                                    
-                      <th></th>
+                      <th style="width:5%"></th>
                     </tr>
                   </thead>
 

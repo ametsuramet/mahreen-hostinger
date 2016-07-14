@@ -23,7 +23,7 @@
                       <th>description</th>               
                       <th>is featured</th>
                       <th>flag</th>
-                      <th style="width:9%"></th>                                              
+                      <th style="width:5%"></th>                                              
                     </tr>
                   </thead>
 

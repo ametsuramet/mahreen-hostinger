@@ -24,7 +24,7 @@
                       <th>Product ID(s)</th>
                       <th>Category ID</th>
                       <th>Flag</th>                    
-                      <th></th>  
+                      <th style="width:5%"></th>  
                     </tr>
                   </thead>
 

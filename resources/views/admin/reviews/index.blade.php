@@ -23,7 +23,7 @@
                       <th>rating</th>
                       <th>product_id</th>
                       <th>description</th>
-                      <th></th>                                          
+                      <th style="width:5%"></th>                                          
                     </tr>
                   </thead>
 

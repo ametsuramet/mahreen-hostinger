@@ -23,7 +23,7 @@
                       <th>Facebook</th>                                    
                       <th>Twitter</th>                                    
                       <th>Istagram</th>                                    
-                      <th></th>
+                      <th style="width:5%"></th>
                     </tr>
                   </thead>
 

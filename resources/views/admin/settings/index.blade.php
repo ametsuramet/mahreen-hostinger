@@ -24,7 +24,7 @@
                       <th>Phone</th>                
                       <th>Address</th>                
               				<th>Description</th>    				     
-              				<th></th>
+              				<th style="width:5%"></th>
 
                     </tr>
                   </thead>

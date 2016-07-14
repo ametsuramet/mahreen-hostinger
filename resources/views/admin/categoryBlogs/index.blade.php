@@ -20,7 +20,7 @@
                       <th>title</th>
                       <th>slug</th>
                       <th>description</th>               
-                      <th style="width:9%"></th>                                                             
+                      <th style="width:5%"></th>                                                             
                     </tr>
                   </thead>
 

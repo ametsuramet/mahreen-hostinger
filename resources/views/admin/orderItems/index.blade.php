@@ -20,7 +20,7 @@
                     	<th>QTY</th>
               				<th>Order ID</th>
               				<th>Product ID</th>    				     
-              				<th style="width:9%"></th>
+              				<th style="width:5%"></th>
                     </tr>
                   </thead>
 

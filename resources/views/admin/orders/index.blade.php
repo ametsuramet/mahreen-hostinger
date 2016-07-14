@@ -29,7 +29,7 @@
               				<th>Shipping Phone</th>
               				<th>Shipping Email</th>    				
                       <th>Status</th>     
-      				        <th style="width:9%"></th>
+      				        <th style="width:5%"></th>
                     </tr>
                   </thead>
 
