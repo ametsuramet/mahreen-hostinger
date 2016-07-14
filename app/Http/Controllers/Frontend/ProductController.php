@@ -87,4 +87,18 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function viewProduct($id,$slug)
+    {
+        $product = Product::where('id',$id)->where('slug',$slug)->get();
+        // print_r($product);
+        return view('frontend.products.index')->with('products', $product);
+    }
+
+    public function listCategory($id,$slug)
+    {
+        $product = Product::where('category_id',$id)->get();
+        // print_r($product);
+        return view('frontend.products.index')->with('products', $product);
+    }
 }
